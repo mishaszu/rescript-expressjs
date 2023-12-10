@@ -1,0 +1,22 @@
+{
+  "name": "rescript-expressjs",
+  "version": "0.1.0",
+  "description": "Rescript bindings for express.js Nodejs framework",
+  "main": "src/Express.res",
+  "keywords": [
+    "rescript",
+    "express",
+    "expressjs",
+    "bindings"
+  ],
+  "scripts": {
+    "dev": "rescript build -w",
+    "build": "rescript build"
+  },
+  "author": "mishaszu",
+  "license": "ISC",
+  "peerDependencies": {
+    "express": "^4.18.2",
+    "rescript": "^10.1.4"
+  }
+}
