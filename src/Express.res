@@ -26,7 +26,7 @@ module Middleware = {
   type callback = (Request.t, Response.t) => promise<unit>
 }
 
-@module external newApp: unit => t = "express"
+@module external createApp: unit => t = "express"
 @send external use: (t, Middleware.t) => unit = "use"
 @send external useWithPath: (t, string, Middleware.t) => unit = "use"
 @send external get: (t, string, Middleware.callback) => unit = "get"
