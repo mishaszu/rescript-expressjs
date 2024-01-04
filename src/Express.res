@@ -18,7 +18,7 @@ module Request = {
   @get external path: t => string = "path"
   @get external method: t => string = "method"
   @get external query: t => Js.Dict.t<string> = "query"
-  @get external params: t => Js.Dict.t<string> = "params"
+  @get external params: t => Js.Json.t = "params"
   @get external body: t => Js.Json.t = "body"
 }
 
