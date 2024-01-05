@@ -44,6 +44,7 @@ module Router = {
   external useWithMiddleware: (r, Middleware.callback3<'a>, Middleware.callback) => unit = "use"
   @send external get: (r, string, Middleware.callback) => unit = "get"
   @send external getUse: (r, string, Middleware.t) => unit = "get"
+  @send
   external getWithMiddleware: (r, string, Middleware.callback3<'a>, Middleware.callback) => unit =
     "get"
   @send external post: (r, string, Middleware.callback) => unit = "post"
@@ -64,6 +65,7 @@ module Methods = {
   @send external useRouter: (t, string, Router.r) => unit = "use"
   @send external get: (t, string, Middleware.callback) => unit = "get"
   @send external getUse: (t, string, Middleware.t) => unit = "get"
+  @send
   external getWithMiddleware: (t, string, Middleware.callback3<'a>, Middleware.callback) => unit =
     "get"
   @send external post: (t, string, Middleware.callback) => unit = "post"
