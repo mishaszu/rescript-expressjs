@@ -42,6 +42,8 @@ module Router = {
   @send external useWithPath: (r, string, Middleware.t) => unit = "use"
   @send external get: (r, string, Middleware.callback) => unit = "get"
   @send external getUse: (r, string, Middleware.t) => unit = "get"
+  @send
+  external useWithMiddleware: (r, Middleware.callback3<'a>, Middleware.callback) => unit = "use"
   @send external post: (r, string, Middleware.callback) => unit = "post"
   @send external postUse: (r, string, Middleware.t) => unit = "post"
   @send
