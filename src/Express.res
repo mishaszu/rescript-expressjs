@@ -30,6 +30,8 @@ module Middleware = {
 
   type callback = (Request.t, Response.t) => promise<unit>
 
+  type callback3<'a> = (Request.t, Response.t, next<'a>) => promise<unit>
+
   type callbackFull<'e, 'a> = ('e, Request.t, Response.t, next<'a>) => promise<unit>
 }
 
@@ -53,6 +55,8 @@ module Router = {
 module Methods = {
   @send external use: (t, Middleware.t) => unit = "use"
   @send external useWithPath: (t, string, Middleware.t) => unit = "use"
+  @send
+  external useWithMiddleware: (t, Middleware.callback3<'a>, Middleware.callback) => unit = "use"
   @send external useRouter: (t, string, Router.r) => unit = "use"
   @send external get: (t, string, Middleware.callback) => unit = "get"
   @send external getUse: (t, string, Middleware.t) => unit = "get"
